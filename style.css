@@ -1,0 +1,710 @@
+/* Google Font */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(-45deg,#ff9ecf,#ffc3e6,#ffd6f2,#ffe7f8);
+    background-size:400% 400%;
+    animation:bgMove 10s ease infinite;
+}
+
+/* Background Animation */
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* Glass Card */
+
+.card{
+
+width:500px;
+max-width:90%;
+
+padding:50px;
+
+text-align:center;
+
+background:rgba(255,255,255,.20);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.35);
+
+box-shadow:0 10px 35px rgba(0,0,0,.15);
+
+animation:fadeUp 1.2s ease;
+
+}
+
+/* Heading */
+
+.card h1{
+
+font-size:42px;
+
+color:#fff;
+
+margin-bottom:20px;
+
+}
+
+/* Paragraph */
+
+.card p{
+
+font-size:18px;
+
+color:white;
+
+line-height:1.8;
+
+margin-bottom:35px;
+
+}
+
+/* Button */
+
+button{
+
+padding:16px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+cursor:pointer;
+
+background:white;
+
+color:#ff2e88;
+
+font-weight:bold;
+
+transition:.35s;
+
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+background:#ff2e88;
+
+color:white;
+
+}
+
+/* Card Animation */
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(80px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+#hearts-container{
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.heart{
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    opacity: .8;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform: translateY(0) scale(.5);
+        opacity: 0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform: translateY(-110vh) scale(1.5);
+        opacity:0;
+    }
+}
+
+/* Button Glow */
+
+#startBtn{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 rgba(255,45,136,.4);
+    }
+
+    50%{
+        box-shadow:0 0 30px rgba(255,45,136,.8);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(255,45,136,.4);
+    }
+
+}
+/* ==========================
+   ENVELOPE SCENE
+========================== */
+
+#envelopeScene{
+    display: none;
+    position: fixed;
+    top: 0;
+left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#envelope{
+
+    font-size:120px;
+
+    cursor:pointer;
+
+    transition:.7s ease;
+
+    transform-origin:center;
+
+}
+
+
+#envelope:hover{
+    transform:scale(1.1);
+}
+/* =========================
+      LOVE LETTER DESIGN
+========================= */
+
+#letter{
+
+    display:none;
+
+    width:760px;
+    max-width:90%;
+
+    padding:65px;
+background-image: url("assets/images/paper.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-color:#fffdf8;
+
+    border-radius:25px;
+
+    border:4px solid #ffd6e7;
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.18),
+    0 0 30px rgba(255,120,170,.25);
+
+    text-align:left;
+
+    animation:letterPop .7s ease;
+
+    z-index:1;
+}
+.letterTitle{
+
+font-family:'Caveat',cursive;
+
+font-size:82px;
+
+font-weight:bold;
+
+text-align:center;
+
+color:#7a143f;
+
+letter-spacing:1px;
+
+margin-bottom:5px;
+
+text-shadow:
+
+1px 1px white,
+
+0 5px 15px rgba(255,90,150,.25);
+
+}
+.divider{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:20px;
+
+margin:25px 0 35px;
+
+font-size:28px;
+
+color:#ff5b8a;
+
+}
+
+.divider::before,
+.divider::after{
+
+content:"";
+
+width:120px;
+
+height:2px;
+
+background:#e4a5ba;
+
+border-radius:20px;
+
+}
+.letterText{
+
+font-family:'Georgia',serif;
+
+font-size:20px;
+
+line-height:1.85;
+
+color:#2b1b1b;
+
+letter-spacing:.3px;
+
+text-align:justify;
+
+}
+.letterText strong{
+
+font-size:30px;
+
+color:#5d2c2c;
+
+}
+.letterText p{
+
+margin-bottom:28px;
+
+}
+.heart{
+
+    color:#ff4d88;
+
+    font-size:22px;
+
+}
+.bengali{
+
+text-align:center;
+
+font-size:30px;
+
+font-weight:bold;
+
+font-family:'Noto Serif Bengali',serif;
+
+color:#8b0d3a;
+
+margin:45px 0;
+
+}
+.signature{
+
+text-align:center;
+
+margin-top:55px;
+
+font-size:28px;
+
+color:#2b1b1b;
+
+}
+.signature span{
+
+font-family:'Caveat',cursive;
+
+font-size:60px;
+
+color:#7a143f;
+
+}
+@keyframes letterPop{
+
+from{
+
+opacity:0;
+
+transform:scale(.6);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+@keyframes openEnvelope{
+
+    0%{
+
+        transform:scale(1) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    40%{
+
+        transform:scale(1.15) rotate(-8deg);
+
+    }
+
+    100%{
+
+        transform:scale(.2) rotate(15deg);
+
+        opacity:0;
+
+    }
+
+}
+/* ===========================
+      PAPER DETAILS
+=========================== */
+
+
+
+#letter{
+
+    position:relative;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    max-height:85vh;
+
+}
+/* ===========================
+      LOVE QUESTION
+=========================== */
+
+.loveQuestion{
+
+    margin-top:60px;
+
+    text-align:center;
+
+}
+
+.loveQuestion h2{
+
+    font-size:40px;
+
+    color:#c2185b;
+
+    margin-bottom:30px;
+
+    font-family:'Caveat',cursive;
+
+}
+
+.loveButtons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.loveButtons button{
+
+    width:170px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
+}
+
+#yesBtn{
+
+    background:#ff4d88;
+
+    color:white;
+
+    box-shadow:0 10px 25px rgba(255,77,136,.45);
+
+}
+
+#yesBtn:hover{
+
+    transform:scale(1.08);
+
+    background:#ff1f6d;
+
+}
+
+#noBtn{
+
+    background:white;
+
+    color:#ff4d88;
+
+    border:2px solid #ff4d88;
+
+    position:relative;
+
+}
+
+#noBtn:hover{
+
+    transform:scale(1.08);
+
+}
+/* ===========================
+      FINAL SCREEN
+=========================== */
+
+#finalScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(135deg,#ff5fa2,#ff85c1,#ffd6ec);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    z-index:9999;
+
+    animation:finalFade .8s ease;
+
+}
+
+#finalScreen h1{
+
+    font-size:70px;
+
+    color:white;
+
+    font-family:'Caveat',cursive;
+
+    text-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+#finalScreen p{
+
+    color:white;
+
+    font-size:28px;
+
+    margin:25px 0;
+
+}
+
+#finalScreen h2{
+
+    color:#fff;
+
+    font-size:42px;
+
+    font-family:'Caveat',cursive;
+
+}
+
+@keyframes finalFade{
+
+    from{
+
+        opacity:0;
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+/* ==========================
+   PHOTO SLIDESHOW
+========================== */
+
+#slideshow{
+
+    width:320px;
+    height:420px;
+
+    margin-top:40px;
+
+    position:relative;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+}
+
+.memory{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    opacity:0;
+
+    transition:opacity 1s ease;
+
+}
+
+.memory.active{
+
+    opacity:1;
+
+}
+/* ==========================
+      LOVE COUNTER
+========================== */
+
+.loveCounter{
+
+    margin-top:45px;
+
+    text-align:center;
+
+}
+
+.loveCounter h2{
+
+    font-family:'Caveat',cursive;
+
+    font-size:42px;
+
+    color:#c2185b;
+
+    margin-bottom:15px;
+
+}
+
+#counter{
+
+    display:inline-block;
+
+    padding:18px 35px;
+
+    background:rgba(255,255,255,.8);
+
+    border-radius:20px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#6d1038;
+
+    box-shadow:0 10px 25px rgba(255,105,180,.25);
+
+    line-height:1.8;
+
+}
